@@ -55,8 +55,8 @@ Depending on how your zip program works you may need to move the unzipped folder
 
 ### CKM ‘GitHub mirror’
  
-Git is a common software version control tool. The CKM archetypes and templates are ‘mirrored’ out to a Git repository hosted at the [openEHR Github](https://github.com/openEHR/CKM-mirror). ![](./images/Octocat.png)
-
+Git is a common software version control tool. The CKM archetypes and templates are ‘mirrored’ out to a Git repository hosted at the [openEHR Github](https://github.com/openEHR/CKM-mirror).
+![](./images/Octocat.png)
 
 If you are familiar with using Git, you can clone the repository as  ``git clone https://github.com/openEHR/CKM-mirror.git``.
 
@@ -64,7 +64,8 @@ If you are familiar with using Git, you can clone the repository as  ``git clone
 
 As clinical modellers we make extensive use of mind map tools and find that the free XMIND tool is one of the best. It works on Windows, Linux and MacOSX.
 
-You should download ![XMIND](./images/xmind_logo2.png) from [XMIND installer](http://xmind.net/downloads/).
+![XMIND](./images/xmind_logo2.png)
+You should download XMIND from [XMIND installer](http://xmind.net/downloads/).
 
 
 ## D. Install the openEHR Archetype Editor
