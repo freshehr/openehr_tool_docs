@@ -64,7 +64,8 @@ If you are familiar with using Git, you can clone the repository as  ``git clone
 
 As clinical modellers we make extensive use of mind map tools and find that the free XMIND tool is one of the best. It works on Windows, Linux and MacOSX.
 
-![XMIND](./images/xmind_logo2.png)
+![XMIND](./images/xmind_logo2.png)  
+
 You should download XMIND from [XMIND installer](http://xmind.net/downloads/).
 
 
@@ -99,11 +100,12 @@ Or one of the sample archetypes provided at
 
      Go to ``Tools->Options->File Locations`` and set both
 
-          **Archetype Repository path**
-          and
-          **Archetype XML Repository path**
+          **Archetype Repository path**  
+          and  
+          **Archetype XML Repository path**  
 
-      to    ``..\Documents\openehr_training``
+      to    ``..\Documents\openehr_training``  
+
 ![](./images/ae_tool_setup.png)
 #### Setup User Defaults
 
@@ -125,14 +127,16 @@ The Ocean Template Designer is a free download available at …
 
 [Ocean Template Designer Latest Beta Release](http://www.openehr.org/downloads/TemplateDesigner/TemplateDesignerSetup_2.6.1213.3.exe)
 
-Once installed you can run the Template Designer from the Desktop or Start Menu.
+Once installed you can run the Template Designer from the Desktop or Start Menu.  
+
 ![](./images/td_screen.png)
 
 ### Template Designer path setup
 
 Go to ``Tools->Knowledge repository->Edit Repository List``
 
-1. Add a new Repository e.g. ``openEHR Training``
+1. Add a new Repository e.g. ``openEHR Training``  
+
 ![](./images/td_setup_repo_1.png)
 2. Complete these paths…
 
@@ -152,25 +156,27 @@ Go to ``Tools->Knowledge repository->Edit Repository List``
 
 ## F. openEHR Archetype Workbench Install
 
-The Archetype Workbench is a technical tool used for experimentation and testing. The latest version is available at
+The Archetype Workbench is a technical tool used for experimentation and testing.  
+
+The latest version is available at
 [openEHR Archetype Workbench](http://www.openehr.org/downloads/ADLworkbench/home)
 
 
 ## G. CKM resources
 
-[openEHR CKM](http://www.openehr.org/ckm/) Models maintained by the international openEHR community.
+[openEHR CKM](http://www.openehr.org/ckm/): Models maintained by the international openEHR community.
 
-[NEHTA CKM](http://dcm.nehta.org.au/ckm/) hosted by NEHTA for the Australian national eHealth program.
+[NEHTA CKM](http://dcm.nehta.org.au/ckm/): Models maintained by NEHTA for the Australian national eHealth program.
 
-[UK CKM](http://clinicalmodels.org.uk/ckm) Models maintained by a consortium of UK health organisations.
+[UK CKM](http://clinicalmodels.org.uk/ckm): Models maintained by a consortium of UK health organisations.
 
-[Norwegian CKM](http://arketyper.no/ckm/) Models maintained by the Norwegian national eHealth program.
+[Norwegian CKM](http://arketyper.no/ckm/): Models maintained by the Norwegian national eHealth program.
 
-[Slovenian CKM](http://ukz.ezdrav.si/ckm/OKM.html) Models maintained by the Slovenian national eHealth program.
+[Slovenian CKM](http://ukz.ezdrav.si/ckm/OKM.html): Models maintained by the Slovenian national eHealth program.
 
 ## H. Tools Internationalisation
 
-The Archetype Editor and Template Dsigner can be setup to use non-English languages.
+The Archetype Editor and Template Designer can be setup to use non-English languages.
 
 [Instructions on setting language and other internationalisation options](tools_internationalisation.md)
 
