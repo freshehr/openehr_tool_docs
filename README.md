@@ -125,7 +125,7 @@ Organisation: freshEHR Clinical Informatics, UK
 
 The Ocean Template Designer is a free download available at …
 
-[Ocean Template Designer Latest Beta Release](http://www.openehr.org/downloads/TemplateDesigner/TemplateDesignerSetup_2.6.1213.3.exe)
+[Ocean Template Designer Latest Beta Release](http://www.openehr.org/download_files/TemplateDesigner/TemplateDesignerSetup_2.8.94.2.exe)
 
 Once installed you can run the Template Designer from the Desktop or Start Menu.  
 
