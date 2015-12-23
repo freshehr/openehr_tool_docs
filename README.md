@@ -6,12 +6,15 @@ These instructions will guide you through the process of setting up your compute
 
 * Create a new folder in a location of your choice called ``openehr_training``.  e.g. ``..\Documents\openehr_training``
 
-* Add a new folder named ``local`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\local`` . This will hold archetypes and templates that we create ourselves.  
+* Add a new folder named ``local`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\local`` .  
+	This will hold archetypes and templates that we create ourselves.  
 
 	* Add a new folder named ``archetypes`` under ``local``. e.g.  ``..\Documents\openehr_training\local\archetypes``
 	* Add a new folder named ``templates`` under ``local``. e.g.  ``..\Documents\openehr_training\local\templates``    
 
-* Add a new folder named ``remote`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\remote``. This will hold archetypes and templates that we download from other places.  
+* Add a new folder named ``remote`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\remote``.  
+	This will hold archetypes and templates that we download from other places.  
+
 	* Add a new folder named ``ckm`` under ``remote``. e.g.  ``..\Documents\openehr_training\remote\ckm``  
 
 You should now have a folder structure something like …
