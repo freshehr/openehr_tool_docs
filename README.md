@@ -75,7 +75,7 @@ The Archetype Editor is the tool we use to create and adapt archetypes.
 
 ![](./images/ae_screen.png)
 
-Download the Archetype Editor from [openEHR Archetype Editor Download page](http://www.openehr.org/downloads/archetypeeditor/home)
+Download the [latest version](http://www.openehr.org/download_files/archetype_editor/archetype_editor_2.8.972.1-windows_32bit.exe) of Archetype Editor.
 
 This installs the openEHR Archetype Editor (ArchetypeEditor.exe) in the folder …
 
@@ -83,6 +83,8 @@ This installs the openEHR Archetype Editor (ArchetypeEditor.exe) in the folder �
 ``C:\Program Files(x86)\openEHR\Archetype Editor`` on Windows-64 systems
 
 and should set up links on your Desktop or Start Menu etc.
+
+Further details are available at the [openEHR Archetype Editor Download page](http://www.openehr.org/downloads/archetypeeditor/home).
 
 ### Setup the openEHR Archetype Editor
 
@@ -130,6 +132,8 @@ The Ocean Template Designer is a free download available at …
 Once installed you can run the Template Designer from the Desktop or Start Menu.  
 
 ![](./images/td_screen.png)
+
+Further details are available at the [openEHR Modelling Tools Page](http://www.openehr.org/downloads/modellingtools).
 
 ### Template Designer path setup
 
