@@ -121,7 +121,7 @@ Name: Ian McNicoll
 Email: [ian@freshehr.com]
 Organisation: freshEHR Clinical Informatics, UK
 ```
-![](./images/ae_user_setup.png)  
+
 
 ##  D. Ocean Template Designer
 
