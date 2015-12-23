@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Openehr tool docs by freshehr</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Openehr tool docs</h1>
+        <p>openEHR Clinical modelling tooling setup</p>
+
+        <p class="view"><a href="https://github.com/freshehr/openehr_tool_docs">View the Project on GitHub <small>freshehr/openehr_tool_docs</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/freshehr/openehr_tool_docs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/freshehr/openehr_tool_docs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/freshehr/openehr_tool_docs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="openehr-clinical-modelling-tools-setup" class="anchor" href="#openehr-clinical-modelling-tools-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>openEHR Clinical modelling tools setup</h1>
+
+<p>These instructions will guide you through the process of setting up your computer with a set of openEHR clinical models (archetypes and templates), and a number of tools that will let you create new models or modify existing models.</p>
+
+<h2>
+<a id="a-setup-appropriate-folders-on-your-computer" class="anchor" href="#a-setup-appropriate-folders-on-your-computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>A. Setup appropriate Folders on your computer</h2>
+
+<ul>
+<li><p>Create a new folder in a location of your choice called <code>openehr_training</code>.  e.g. <code>..\Documents\openehr_training</code></p></li>
+<li>
+<p>Add a new folder named <code>local</code> under <code>openehr_training</code>. e.g.  <code>..\Documents\openehr_training\local</code> .<br>
+This will hold archetypes and templates that we create ourselves.  </p>
+
+<ul>
+<li>Add a new folder named <code>archetypes</code> under <code>local</code>. e.g.  <code>..\Documents\openehr_training\local\archetypes</code>
+</li>
+<li>Add a new folder named <code>templates</code> under <code>local</code>. e.g.  <code>..\Documents\openehr_training\local\templates</code><br>
+</li>
+</ul>
+</li>
+<li>
+<p>Add a new folder named <code>remote</code> under <code>openehr_training</code>. e.g.  <code>..\Documents\openehr_training\remote</code>.<br>
+This will hold archetypes and templates that we download from other places.  </p>
+
+<ul>
+<li>Add a new folder named <code>ckm</code> under <code>remote</code>. e.g.  <code>..\Documents\openehr_training\remote\ckm</code><br>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>You should now have a folder structure something like …</p>
+
+<ul>
+<li>openehr_training
+
+<ul>
+<li>local
+
+<ul>
+<li>archetypes</li>
+<li>templates</li>
+</ul>
+</li>
+<li>remote
+
+<ul>
+<li>ckm</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="b-download-archetypes-from-the-openehr-foundation-clinical-knowledge-manager" class="anchor" href="#b-download-archetypes-from-the-openehr-foundation-clinical-knowledge-manager" aria-hidden="true"><span class="octicon octicon-link"></span></a>B. Download Archetypes from the openEHR Foundation Clinical Knowledge Manager</h2>
+
+<p>The openEHR Foundation Clinical Knowledge Manager (CKM) is a web-based tool that stores openEHR clinical models that are developed collaboratively by the openEHR community and made freely available for others to use and copy.</p>
+
+<p>Go to <a href="http://openehr.org/ckm">openEHR Foundation CKM</a> then from the top menu select <code>Archetypes-&gt;Bulk Export</code>.
+<img src="./images/ckm_export.png" alt="CKM Bulk Export"></p>
+
+<p>This will create a zip file with the latest versions of openEHR Foundation CKM archetypes.</p>
+
+<p>Download this zip file and unzip it into the remote/ckm folder you created earlier e.g. <code>..\Documents\openehr_training\models\remote\ckm</code> making sure you preserve the folders.</p>
+
+<p>You should now have something like</p>
+
+<ul>
+<li>openehr_training
+
+<ul>
+<li>local
+
+<ul>
+<li>archetypes</li>
+<li>templates</li>
+</ul>
+</li>
+<li>remote
+
+<ul>
+<li>ckm
+
+<ul>
+<li>local
+
+<ul>
+<li>archetypes</li>
+<li>templates</li>
+</ul>
+</li>
+<li>remote
+
+<ul>
+<li>archetypes</li>
+<li>templates</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>Depending on how your zip program works you may need to move the unzipped folders around to match this pattern.</p>
+
+<h3>
+<a id="ckm-github-mirror" class="anchor" href="#ckm-github-mirror" aria-hidden="true"><span class="octicon octicon-link"></span></a>CKM ‘GitHub mirror’</h3>
+
+<p>Git is a common software version control tool. The CKM archetypes and templates are ‘mirrored’ out to a Git repository hosted at the <a href="https://github.com/openEHR/CKM-mirror">openEHR Github</a>.
+<img src="./images/Octocat.png" alt=""></p>
+
+<p>If you are familiar with using Git, you can clone the repository as  <code>git clone https://github.com/openEHR/CKM-mirror.git</code>.</p>
+
+<h2>
+<a id="c-install-the-openehr-archetype-editor" class="anchor" href="#c-install-the-openehr-archetype-editor" aria-hidden="true"><span class="octicon octicon-link"></span></a>C. Install the openEHR Archetype Editor</h2>
+
+<p>The Archetype Editor is the tool we use to create and adapt archetypes.</p>
+
+<p><img src="./images/ae_screen.png" alt=""></p>
+
+<p>Download the <a href="http://www.openehr.org/download_files/archetype_editor/archetype_editor_2.8.972.1-windows_32bit.exe">latest version</a> of Archetype Editor.</p>
+
+<p>This installs the openEHR Archetype Editor (ArchetypeEditor.exe) in the folder …</p>
+
+<p><code>C:\Program Files\openEHR\Archetype Editor</code> on Windows-32 systems
+<code>C:\Program Files(x86)\openEHR\Archetype Editor</code> on Windows-64 systems</p>
+
+<p>and should set up links on your Desktop or Start Menu etc.</p>
+
+<p>Further details are available at the <a href="http://www.openehr.org/downloads/archetypeeditor/home">openEHR Archetype Editor Download page</a>.</p>
+
+<h3>
+<a id="setup-the-openehr-archetype-editor" class="anchor" href="#setup-the-openehr-archetype-editor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup the openEHR Archetype Editor</h3>
+
+<p>Run the Archetype Editor from the Desktop or Start Menu.</p>
+
+<p>At the initial screen, open any existing archetype on your system e.g. one of the CKM archetypes previously downloaded</p>
+
+<p><code>..\Documents\openehr_training\remote\ckm\archetypes\cluster\OPENEHR-EHR-CLUSTER.device.v1.adl</code></p>
+
+<p>Or one of the sample archetypes provided at</p>
+
+<p>..\Users\Public\Documents\My Clinical Models\Sample Set\Archetypes</p>
+
+<h4>
+<a id="set-the-default-archetype-editor-paths" class="anchor" href="#set-the-default-archetype-editor-paths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set the default Archetype Editor paths</h4>
+
+<p>     Go to <code>Tools-&gt;Options-&gt;File Locations</code> and set both</p>
+
+<p>          <strong>Archetype Repository path</strong><br>
+          and<br>
+          <strong>Archetype XML Repository path</strong>  </p>
+
+<p>      to    <code>..\Documents\openehr_training</code>  </p>
+
+<p><img src="./images/ae_tool_setup.png" alt=""></p>
+
+<h4>
+<a id="setup-user-defaults" class="anchor" href="#setup-user-defaults" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup User Defaults</h4>
+
+<p>Go to <code>Tools-&gt;Options-&gt;User Defaults</code></p>
+
+<p>and enter your details e.g.</p>
+
+<pre><code>Name: Ian McNicoll
+
+Email: [ian@freshehr.com]
+Organisation: freshEHR Clinical Informatics, UK
+</code></pre>
+
+<p><img src="./images/ae_user_setup2.png" alt=""></p>
+
+<h2>
+<a id="d-ocean-template-designer" class="anchor" href="#d-ocean-template-designer" aria-hidden="true"><span class="octicon octicon-link"></span></a>D. Ocean Template Designer</h2>
+
+<p>The Ocean Template Designer is a free download available at …</p>
+
+<p><a href="http://www.openehr.org/download_files/TemplateDesigner/TemplateDesignerSetup_2.8.94.2.exe">Ocean Template Designer Latest Beta Release</a></p>
+
+<p>Once installed you can run the Template Designer from the Desktop or Start Menu.  </p>
+
+<p><img src="./images/td_screen.png" alt=""></p>
+
+<p>Further details are available at the <a href="http://www.openehr.org/downloads/modellingtools">openEHR Modelling Tools Page</a>.</p>
+
+<h3>
+<a id="template-designer-path-setup" class="anchor" href="#template-designer-path-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template Designer path setup</h3>
+
+<p>Go to <code>Tools-&gt;Knowledge repository-&gt;Edit Repository List</code></p>
+
+<ol>
+<li>Add a new Repository e.g. <code>openEHR Training</code><br>
+</li>
+</ol>
+
+<p><img src="./images/td_setup_repo_1.png" alt="">
+2. Complete these paths…</p>
+
+<p>  <strong>Archetype Files</strong></p>
+
+<p><code>..\Documents\Archetypes\openehr_training\remote</code></p>
+
+<p> <strong>Working Archetype Files</strong></p>
+
+<p><code>..\Documents\openehr_training\local\archetypes</code></p>
+
+<p> <strong>Template Files</strong></p>
+
+<p> <code>..\Documents\openehr_training</code> </p>
+
+<p><img src="./images/td_setup_repo_2.png" alt=""></p>
+
+<h2>
+<a id="e-install-the-xmind-freeware-mindmap-tool" class="anchor" href="#e-install-the-xmind-freeware-mindmap-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>E. Install the XMIND freeware Mindmap tool</h2>
+
+<p>As clinical modellers we make extensive use of mind map tools and find that the free XMIND tool is one of the best. It works on Windows, Linux and MacOSX.</p>
+
+<p><img src="./images/xmind_logo2.png" alt="XMIND">  </p>
+
+<p>You should download XMIND from <a href="http://xmind.net/downloads/">XMIND installer</a>.</p>
+
+<h2>
+<a id="f-openehr-archetype-workbench-install" class="anchor" href="#f-openehr-archetype-workbench-install" aria-hidden="true"><span class="octicon octicon-link"></span></a>F. openEHR Archetype Workbench Install</h2>
+
+<p>The Archetype Workbench is a technical tool used for experimentation and testing.  </p>
+
+<p>The latest version is available at
+<a href="http://www.openehr.org/downloads/ADLworkbench/home">openEHR Archetype Workbench</a></p>
+
+<h2>
+<a id="g-ckm-resources" class="anchor" href="#g-ckm-resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>G. CKM resources</h2>
+
+<p><a href="http://www.openehr.org/ckm/">openEHR CKM</a>: Models maintained by the international openEHR community.</p>
+
+<p><a href="http://dcm.nehta.org.au/ckm/">NEHTA CKM</a>: Models maintained by NEHTA for the Australian national eHealth program.</p>
+
+<p><a href="http://clinicalmodels.org.uk/ckm">UK CKM</a>: Models maintained by a consortium of UK health organisations.</p>
+
+<p><a href="http://arketyper.no/ckm/">Norwegian CKM</a>: Models maintained by the Norwegian national eHealth program.</p>
+
+<p><a href="http://ukz.ezdrav.si/ckm/OKM.html">Slovenian CKM</a>: Models maintained by the Slovenian national eHealth program.</p>
+
+<h2>
+<a id="h-tools-internationalisation" class="anchor" href="#h-tools-internationalisation" aria-hidden="true"><span class="octicon octicon-link"></span></a>H. Tools Internationalisation</h2>
+
+<p>The Archetype Editor and Template Designer can be setup to use non-English languages.</p>
+
+<p><a href="./tools_internationalisation.md">Instructions on setting language and other internationalisation options</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/freshehr">freshehr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
