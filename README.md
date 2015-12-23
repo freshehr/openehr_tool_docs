@@ -60,16 +60,8 @@ Git is a common software version control tool. The CKM archetypes and templates 
 
 If you are familiar with using Git, you can clone the repository as  ``git clone https://github.com/openEHR/CKM-mirror.git``.
 
-## C. Install the XMIND freeware Mindmap tool
 
-As clinical modellers we make extensive use of mind map tools and find that the free XMIND tool is one of the best. It works on Windows, Linux and MacOSX.
-
-![XMIND](./images/xmind_logo2.png)  
-
-You should download XMIND from [XMIND installer](http://xmind.net/downloads/).
-
-
-## D. Install the openEHR Archetype Editor
+## C. Install the openEHR Archetype Editor
 
 The Archetype Editor is the tool we use to create and adapt archetypes.
 
@@ -121,7 +113,8 @@ Name: Ian McNicoll
 Email: [ian@freshehr.com]
 Organisation: freshEHR Clinical Informatics, UK
 ```
-![](./images/ae_user_setup2.png)  
+![](./images/ae_user_setup2.png)
+
 
 ##  D. Ocean Template Designer
 
@@ -158,6 +151,16 @@ Go to ``Tools->Knowledge repository->Edit Repository List``
 
 ![](./images/td_setup_repo_2.png)
 
+
+## E. Install the XMIND freeware Mindmap tool
+
+As clinical modellers we make extensive use of mind map tools and find that the free XMIND tool is one of the best. It works on Windows, Linux and MacOSX.
+
+![XMIND](./images/xmind_logo2.png)  
+
+You should download XMIND from [XMIND installer](http://xmind.net/downloads/).
+
+
 ## F. openEHR Archetype Workbench Install
 
 The Archetype Workbench is a technical tool used for experimentation and testing.  
@@ -177,6 +180,7 @@ The latest version is available at
 [Norwegian CKM](http://arketyper.no/ckm/): Models maintained by the Norwegian national eHealth program.
 
 [Slovenian CKM](http://ukz.ezdrav.si/ckm/OKM.html): Models maintained by the Slovenian national eHealth program.
+
 
 ## H. Tools Internationalisation
 
