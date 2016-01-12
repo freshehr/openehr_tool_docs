@@ -12,10 +12,16 @@ These instructions will guide you through the process of setting up your compute
 	* Add a new folder named ``archetypes`` under ``local``. e.g.  ``..\Documents\openehr_training\local\archetypes``
 	* Add a new folder named ``templates`` under ``local``. e.g.  ``..\Documents\openehr_training\local\templates``    
 
+<<<<<<< Updated upstream
 * Add a new folder named ``remote`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\remote``.  
 	This will hold archetypes and templates that we download from other places.  
 
 	* Add a new folder named ``ckm`` under ``remote``. e.g.  ``..\Documents\openehr_training\remote\ckm``  
+=======
+* Add a new folder named ``remote`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\remote``. This will hold archetypes and templates that we download from other places.  
+	* Add a new folder named ``ckm`` under ``remote``. e.g.  ``..\Documents\openehr_training\remote\ckm``
+	* Add a new folder named ``archetypes`` under ``ckm``. e.g. ``..\Documents\openehr_training\remote\ckm\archetypes``
+>>>>>>> Stashed changes
 
 You should now have a folder structure something like …
 
@@ -25,6 +31,7 @@ You should now have a folder structure something like …
 		* templates
 	* remote
 		* ckm
+			* archetypes
 
 
 
@@ -37,7 +44,7 @@ Go to [openEHR Foundation CKM](http://openehr.org/ckm) then from the top menu se
 
 This will create a zip file with the latest versions of openEHR Foundation CKM archetypes.
 
-Download this zip file and unzip it into the remote/ckm folder you created earlier e.g. ``..\Documents\openehr_training\models\remote\ckm`` making sure you preserve the folders.
+Download this zip file and unzip it into the remote/ckm folder you created earlier e.g. ``..\Documents\openehr_training\models\remote\ckm\archetypes`` making sure you preserve the folders.
 
 You should now have something like
 
@@ -47,12 +54,13 @@ You should now have something like
 		* templates
 	* remote
 		* ckm
-			* local
 				* archetypes
-				* templates
-			* remote
-				* archetypes
-				* templates
+					* cluster
+					* composition
+					* demographic
+					* entry
+					* section
+					* readme.txt
 
 Depending on how your zip program works you may need to move the unzipped folders around to match this pattern.
 
