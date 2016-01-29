@@ -190,4 +190,4 @@ The latest version is available at
 
 The Archetype Editor and Template Designer can be setup to use non-English languages.
 
-[Instructions on setting language and other internationalisation options](./tools_internationalisation.md)
+[Instructions on setting language and other internationalisation options](./docs/tools_internationalisation.md)
