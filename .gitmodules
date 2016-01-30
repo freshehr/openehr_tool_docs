@@ -1,0 +1,3 @@
+[submodule "models/remote/org.openehr"]
+	path = models/remote/org.openehr
+	url = https://github.com/openEHR/CKM-mirror.git
