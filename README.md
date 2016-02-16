@@ -5,7 +5,7 @@ These instructions will guide you through the process of setting up your compute
 ## **Non-Windows systems**
 Please note that the current Archetype Editor and Template Designer will only work with Windows, but it is not critical that every course participant has access to the tools during the workshop. It is generally beneficial for participants to work in small groups, and there are usually a sufficient number of Windows machines available.
 
-For interest, a new set of open-source web-based tools is in early development and can be found at these links.
+For interest, a new set of open-source web-based tools is in early development and can be found at these links.  
 [Archetype Designer](http://ehrscape.marand.si/designer/)  
 [Template Designer](http://ehrscape.marand.si/designer/)  
 [Source Code](https://github.com/openEHR/adl-designer)  
