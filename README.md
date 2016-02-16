@@ -2,6 +2,15 @@
 
 These instructions will guide you through the process of setting up your computer with a set of openEHR clinical models (archetypes and templates), and a number of tools that will let you create new models or modify existing models.
 
+## **Non-Windows systems**
+Please note that the current Archetype Editor and Template Designer will only work with Windows, but it is not critical that every course participant has access to the tools during the workshop. It is very beneficial for participants to work in small groups, and there are usually a sufficient number of Windows machines available.
+
+For interest, a new set of web-based tools is in early development and can be found at these links.
+[Archetype Designer](http://ehrscape.marand.si/designer/)
+[Template Designer](http://ehrscape.marand.si/designer/)
+
+Please note that these tools are not yet suitable for training use.
+
 
 
 ## **A. Download and install the XMIND freeware Mindmap tool**
@@ -46,7 +55,19 @@ Once installed you can run the Template Designer from the Desktop or Start Menu.
 Further details are available at the [openEHR Modelling Tools Page](http://www.openehr.org/downloads/modellingtools).
 
 
+
 ## **D. Setup appropriate Folders on your computer**
+
+This is the folder structure you are going to create in this step:
+```
+* openehr_training
+	* local
+		* archetypes
+		* templates
+	* remote
+		* ckm
+			* archetypes  
+```
 
 * Create a new folder in a location of your choice called ``openehr_training``.  e.g. ``..\Documents\openehr_training``
 
@@ -60,17 +81,6 @@ Further details are available at the [openEHR Modelling Tools Page](http://www.o
 	* Add a new folder named ``ckm`` under ``remote``. e.g.  ``..\Documents\openehr_training\remote\ckm``
 	* Add a new folder named ``archetypes`` under ``ckm``. e.g. ``..\Documents\openehr_training\remote\ckm\archetypes``
 
-You should now have a folder structure something like …
-
-```
-* openehr_training
-	* local
-		* archetypes
-		* templates
-	* remote
-		* ckm
-			* archetypes  
-```
 
 
 ## **E. Download Archetypes from the openEHR Foundation Clinical Knowledge Manager**
@@ -181,12 +191,13 @@ Go to ``Tools->Knowledge repository->Edit Repository List``
 
 
 
-## **H. openEHR Archetype Workbench Install**
+## **H. Install ADL Workbench (optional)**
 
-The Archetype Workbench is a technical tool used for experimentation and testing.  
+The Archetype Workbench is a technical tool used for experimentation and testing, and it is not usually required by archetype authors.  
 
 The latest version is available at
-[openEHR Archetype Workbench](http://www.openehr.org/downloads/ADLworkbench/home)
+[openEHR ADL Archetype Workbench](http://www.openehr.org/downloads/ADLworkbench/home)
+
 
 
 ## **I. CKM resources**
@@ -200,6 +211,7 @@ The latest version is available at
 [Norwegian CKM](http://arketyper.no/ckm/): Models maintained by the Norwegian national eHealth program.
 
 [Slovenian CKM](http://ukz.ezdrav.si/ckm/OKM.html): Models maintained by the Slovenian national eHealth program.
+
 
 
 ## **J. Tools Internationalisation**
