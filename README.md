@@ -6,9 +6,9 @@ These instructions will guide you through the process of setting up your compute
 Please note that the current Archetype Editor and Template Designer will only work with Windows, but it is not critical that every course participant has access to the tools during the workshop. It is generally beneficial for participants to work in small groups, and there are usually a sufficient number of Windows machines available.
 
 For interest, a new set of open-source web-based tools is in early development and can be found at these links.
-[Archetype Designer](http://ehrscape.marand.si/designer/)
-[Template Designer](http://ehrscape.marand.si/designer/)
-[Source Code](https://github.com/openEHR/adl-designer)
+[Archetype Designer](http://ehrscape.marand.si/designer/)  
+[Template Designer](http://ehrscape.marand.si/designer/)  
+[Source Code](https://github.com/openEHR/adl-designer)  
 
 Please note that these tools are not yet suitable for training use.
 
@@ -208,6 +208,8 @@ The latest version is available at
 [NEHTA CKM](http://dcm.nehta.org.au/ckm/): Models maintained by NEHTA for the Australian national eHealth program.
 
 [UK CKM](http://clinicalmodels.org.uk/ckm): Models maintained by a consortium of UK health organisations.
+
+[HSCIC CKM](http://ckm.hscic.gov.uk/ckm/): Models maintained by the UK Health and Socical Care Information Centre.
 
 [Norwegian CKM](http://arketyper.no/ckm/): Models maintained by the Norwegian national eHealth program.
 
