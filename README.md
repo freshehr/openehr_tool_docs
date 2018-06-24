@@ -57,80 +57,41 @@ Further details are available at the [openEHR Modelling Tools Page](http://www.o
 
 
 
-## **D. Setup appropriate Folders on your computer**
+## **D. Download models from freshEHR github**
 
-This is the folder structure you are going to create in this step:
-```
-* openehr_training
-	* local
-		* archetypes
-		* templates
-	* remote
-		* ckm
-			* archetypes  
-```
+Go to the [freshEHR github page](https://github.com/freshehr/openehr_tool_docs). At the point you can either download the entire github repository as a zip file or - if you are familiar with using github - you can clone the repository.
 
-* Create a new folder in a location of your choice called ``openehr_training``.  e.g. ``..\Documents\openehr_training``
-
-* Add a new folder named ``local`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\local`` .  
-	This will hold archetypes and templates that we create ourselves.  
-
-	* Add a new folder named ``archetypes`` under ``local``. e.g.  ``..\Documents\openehr_training\local\archetypes``
-	* Add a new folder named ``templates`` under ``local``. e.g.  ``..\Documents\openehr_training\local\templates``    
-
-* Add a new folder named ``remote`` under ``openehr_training``. e.g.  ``..\Documents\openehr_training\remote``. This will hold archetypes and templates that we download from other places.  
-	* Add a new folder named ``ckm`` under ``remote``. e.g.  ``..\Documents\openehr_training\remote\ckm``
-	* Add a new folder named ``archetypes`` under ``ckm``. e.g. ``..\Documents\openehr_training\remote\ckm\archetypes``
-
-
-
-## **E. Download Archetypes from the openEHR Foundation Clinical Knowledge Manager**
-
-The openEHR Foundation Clinical Knowledge Manager (CKM) is a web-based tool that stores openEHR clinical models that are developed collaboratively by the openEHR community and made freely available for others to use and copy.
-
-Go to [openEHR Foundation CKM](http://openehr.org/ckm) then from the top menu select ``Archetypes->Bulk Export``.
-![CKM Bulk Export](./images/ckm_export.png)
-
-This will create a zip file with the latest versions of openEHR Foundation CKM archetypes.
-
-Download this zip file and unzip it into the remote/ckm folder you created earlier e.g. ``..\Documents\openehr_training\models\remote\ckm\archetypes`` making sure you preserve the folders.
-
-You should now have something like
+If you have downloaded the repository, you then need to unzip it a location of your choice, e.g. openehr_training. You should have a folder structure like this:
 
 ```
-* openehr_training
-	* local
-		* archetypes
-		* templates
-	* remote
-		* ckm
+* docs
+* images
+* models
+	* ckm
+		* local
 			* archetypes  
 				* cluster  
 				* composition  
 				* demographic  
 				* entry  
 				* section  
-				* readme.txt
+		* remote
+			* ...
+	* local
+		* archetypes
+			* ...
+		* templates
+* technical
+
 ```
 
-Depending on how your zip program works you may need to move the unzipped folders around to match this pattern.
-
-### **CKM ‘GitHub mirror’**
-
-Git is a common software version control tool. The CKM archetypes and templates are ‘mirrored’ out to a Git repository hosted at the [openEHR Github](https://github.com/openEHR/CKM-mirror).
-![](./images/Octocat.png)
-
-If you are familiar with using Git, you can clone the repository as  ``git clone https://github.com/openEHR/CKM-mirror.git``.
-
-
-
-## **F. Setup the openEHR Archetype Editor**
+## **E. Setup the openEHR Archetype Editor**
 
 Run the Archetype Editor from the Desktop or Start Menu.
 
 At the initial screen, open any existing archetype on your system e.g. one of the CKM archetypes previously downloaded
 
-``..\Documents\openehr_training\remote\ckm\archetypes\cluster\OPENEHR-EHR-CLUSTER.device.v1.adl``
+``..\Documents\models\ckm\remote\archetypes\cluster\OPENEHR-EHR-CLUSTER.device.v1.adl``
 
 Or one of the sample archetypes provided at
 
@@ -164,7 +125,7 @@ Organisation: freshEHR Clinical Informatics, UK
 
 
 
-## **G. Setup Template Designer**
+## **F. Setup Template Designer**
 
 Run the Template Designer from the Desktop or Start Menu.
 
@@ -178,7 +139,7 @@ Go to ``Tools->Knowledge repository->Edit Repository List``
 
   **Archetype Files**
 
- ``..\Documents\Archetypes\openehr_training\remote``
+ ``..\Documents\openehr_training\CKM``
 
  **Working Archetype Files**
 
@@ -186,13 +147,13 @@ Go to ``Tools->Knowledge repository->Edit Repository List``
 
  **Template Files**
 
- ``..\Documents\openehr_training`` 
+ ``..\Documents\openehr_training\local\templates`` 
 
 ![](./images/td_setup_repo_2.png)
 
 
 
-## **H. Install ADL Workbench (optional)**
+## **G. Install ADL Workbench (optional)**
 
 The Archetype Workbench is a technical tool used for experimentation and testing, and it is not usually required by archetype authors.  
 
@@ -201,7 +162,7 @@ The latest version is available at
 
 
 
-## **I. CKM resources**
+## **H. CKM resources**
 
 [openEHR CKM](http://www.openehr.org/ckm/): Models maintained by the international openEHR community.
 
@@ -209,15 +170,13 @@ The latest version is available at
 
 [UK CKM](http://clinicalmodels.org.uk/ckm): Models maintained by a consortium of UK health organisations.
 
-[HSCIC CKM](http://ckm.hscic.gov.uk/ckm/): Models maintained by the UK Health and Socical Care Information Centre.
-
 [Norwegian CKM](http://arketyper.no/ckm/): Models maintained by the Norwegian national eHealth program.
 
 [Slovenian CKM](http://ukz.ezdrav.si/ckm/OKM.html): Models maintained by the Slovenian national eHealth program.
 
 
 
-## **J. Tools Internationalisation**
+## **I. Tools Internationalisation**
 
 The Archetype Editor and Template Designer can be setup to use non-English languages.
 
