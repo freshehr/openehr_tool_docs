@@ -1,0 +1,401 @@
+﻿archetype (adl_version=1.4; uid=55633e41-adbb-4197-9289-0072aca61cc1)
+	openEHR-EHR-CLUSTER.oedema.v0
+
+concept
+	[at0000]	-- Examination of oedema
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			author = <
+				["name"] = <"Mona Saleh">
+			>
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"Andrey Tsaplin">
+				["organisation"] = <"Moscow DGP 99">
+			>
+			accreditation = <"Russian State University">
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"2007-04-09">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For recording a description and clinical interpretation of the findings observed during the physical examination of oedema.">
+			use = <"Use to record a description of the overall findings observed during the physical examination of oedema.
+
+This archetype has been designed to be used within the 'Examination findings' SLOT of CLUSTER archetypes for physical examination findings. If used within a CLUSTER.exam_pattern related archetype, the 'Body site' data element and 'Structured body site' SLOT are redundant as the location of oedema will be identified in the Exam CLUSTER. If used within the OBSERVATION.exam archetype or CLUSTERs where the site has not been identified, then 'Body site' and/or 'Structured body site' SLOT will be required.
+
+The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
+
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.">
+			keywords = <"oedema", "swelling">
+			misuse = <"Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.">
+			copyright = <"© openEHR Foundation">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل التفاصيل حول الوذمة">
+			use = <"ينبغي أن يدخل كجزء من نموذج يتم فيه إدخال بيانات لتعريف الشخص محل الفحص.">
+			keywords = <"الوذمة", "الانتفاخ">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			purpose = <"Для описания отека">
+			use = <"Следует включать в архетип описывающий объект обследования">
+			keywords = <"Отек", "Отечность", "Водянка", "Асцит">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, freshEHR Clinical Informatics Ltd, United Kingdom (Editor)", "Hildegard Franke, freshEHR Clinical Informatics Ltd., United Kingdom (Editor)">
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"96507CB14934505B3A1E607DEA3E2516">
+		["build_uid"] = <"fec87d6e-3fb0-4adc-9d6f-ea64e9fd32b5">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Examination of oedema
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0018] occurrences matches {0..1} matches {	-- Present
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0019, 	-- Present
+							at0020]	-- Absent
+						}
+					}
+				}
+			}
+			ELEMENT[at0013] occurrences matches {0..*} matches {	-- Body site name
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0014] occurrences matches {0..*} matches {	-- Structured body site
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Clinical description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- Severity
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0007, 	-- Mild (+)
+							at0008, 	-- Moderate (++)
+							at0009]	-- Severe (+++)
+						}
+					}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {	-- Pitting
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0026, 	-- Pitting
+							at0027]	-- No pitting
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0028] occurrences matches {0..*} matches {	-- Additional details
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exam(-[a-zA-Z0-9_]+)*\.v0/}
+			}
+			allow_archetype CLUSTER[at0024] occurrences matches {0..*} matches {	-- Multimedia representation
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Clinical interpretation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {	-- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0025] occurrences matches {0..*} matches {	-- Examination not done
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Examination of oedema">
+					description = <"Findings observed during examination of oedema.">
+				>
+				["at0001"] = <
+					text = <"Clinical description">
+					description = <"Description about the oedema finding observed during the physical examination.">
+				>
+				["at0006"] = <
+					text = <"Severity">
+					description = <"Estimation of the severity of oedema.">
+				>
+				["at0007"] = <
+					text = <"Mild (+)">
+					description = <"The oedema is mild.">
+				>
+				["at0008"] = <
+					text = <"Moderate (++)">
+					description = <"The oedema is moderate.">
+				>
+				["at0009"] = <
+					text = <"Severe (+++)">
+					description = <"The oedema is severe.">
+				>
+				["at0011"] = <
+					text = <"Pitting">
+					description = <"Does pitting occur on finger pressure?">
+				>
+				["at0012"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the oedema, not captured in other fields.">
+				>
+				["at0013"] = <
+					text = <"Body site name">
+					description = <"Identification of a simple anatomical site where the oedema is located.">
+					comment = <"If the body site has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.">
+				>
+				["at0014"] = <
+					text = <"Structured body site">
+					description = <"Slot to contain detailed and structured anatomical location details.">
+					comment = <"If the body site has previously been identified in another archetype in which this archetype is then nested, this SLOT becomes redundant.">
+				>
+				["at0018"] = <
+					text = <"Present">
+					description = <"Is oedema present?">
+				>
+				["at0019"] = <
+					text = <"Present">
+					description = <"Oedema is observed to be present.">
+				>
+				["at0020"] = <
+					text = <"Absent">
+					description = <"Oedema is not observed to be present.">
+				>
+				["at0023"] = <
+					text = <"Clinical interpretation">
+					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the oedema finding.">
+				>
+				["at0024"] = <
+					text = <"Multimedia representation">
+					description = <"Digital image, video or diagram representing the oedema.">
+				>
+				["at0025"] = <
+					text = <"Examination not done">
+					description = <"Details to explicitly record that this examination for oedema was not performed.">
+				>
+				["at0026"] = <
+					text = <"Pitting">
+					description = <"Pitting occurs on finger pressure.">
+				>
+				["at0027"] = <
+					text = <"No pitting">
+					description = <"No pitting occurs on finger pressure.">
+				>
+				["at0028"] = <
+					text = <"Additional details">
+					description = <"Structured details of additional findings.">
+				>
+			>
+		>
+		["ar-sy"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Oedema(en)">
+					description = <"*Abnormal accumulation of fluid in the skin.(en)">
+				>
+				["at0001"] = <
+					text = <"*Clinical description(en)">
+					description = <"*Narrative description about the oedema.(en)">
+				>
+				["at0006"] = <
+					text = <"*Severity(en)">
+					description = <"*Estimation of the severity of oedema.(en)">
+				>
+				["at0007"] = <
+					text = <"*Mild (+)(en)">
+					description = <"*The oedema is mild.(en)">
+				>
+				["at0008"] = <
+					text = <"*Moderate (++)(en)">
+					description = <"*The oedema is moderate.(en)">
+				>
+				["at0009"] = <
+					text = <"*Severe (+++)(en)">
+					description = <"*The oedema is severe.(en)">
+				>
+				["at0011"] = <
+					text = <"الانطباع">
+					description = <"هل للوذمة انطباع من الضغط بالإصبع">
+				>
+				["at0012"] = <
+					text = <"*Comment(en)">
+					description = <"*Additional narrative about the oedema, not captured in other fields.(en)">
+				>
+				["at0013"] = <
+					text = <"*Body site name(en)">
+					description = <"*Identification of a simple anatomical site where the oedema is located.(en)">
+					comment = <"*If the body site has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.(en)">
+				>
+				["at0014"] = <
+					text = <"*Structured body site(en)">
+					description = <"*Slot to contain detailed and structured anatomical location details.(en)">
+					comment = <"*If the body site has previously been identified in another archetype in which this archetype is then nested, this SLOT becomes redundant.(en)">
+				>
+				["at0018"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0019"] = <
+					text = <"*Present(en)">
+					description = <"*Oedema is present.(en)">
+				>
+				["at0020"] = <
+					text = <"*Absent(en)">
+					description = <"*Oedema is not observed to be present.(en)">
+				>
+				["at0023"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"*Pitting occurs(en)">
+					description = <"*Oedema is observed to display pitting on finger pressure.(en)">
+				>
+				["at0027"] = <
+					text = <"*No pitting occurs(en)">
+					description = <"*Oedema is not observed to display pitting on finger pressure.(en)">
+				>
+				["at0028"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+			>
+		>
+		["ru"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Oedema(en)">
+					description = <"*Abnormal accumulation of fluid in the skin.(en)">
+				>
+				["at0001"] = <
+					text = <"*Clinical description(en)">
+					description = <"*Narrative description about the oedema.(en)">
+				>
+				["at0006"] = <
+					text = <"*Severity(en)">
+					description = <"*Estimation of the severity of oedema.(en)">
+				>
+				["at0007"] = <
+					text = <"*Mild (+)(en)">
+					description = <"*The oedema is mild.(en)">
+				>
+				["at0008"] = <
+					text = <"*Moderate (++)(en)">
+					description = <"*The oedema is moderate.(en)">
+				>
+				["at0009"] = <
+					text = <"*Severe (+++)(en)">
+					description = <"*The oedema is severe.(en)">
+				>
+				["at0011"] = <
+					text = <"Продавливание">
+					description = <"Остаётся ли след после пальпации">
+				>
+				["at0012"] = <
+					text = <"*Comment(en)">
+					description = <"*Additional narrative about the oedema, not captured in other fields.(en)">
+				>
+				["at0013"] = <
+					text = <"*Body site name(en)">
+					description = <"*Identification of a simple anatomical site where the oedema is located.(en)">
+					comment = <"*If the body site has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.(en)">
+				>
+				["at0014"] = <
+					text = <"*Structured body site(en)">
+					description = <"*Slot to contain detailed and structured anatomical location details.(en)">
+					comment = <"*If the body site has previously been identified in another archetype in which this archetype is then nested, this SLOT becomes redundant.(en)">
+				>
+				["at0018"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0019"] = <
+					text = <"*Present(en)">
+					description = <"*Oedema is present.(en)">
+				>
+				["at0020"] = <
+					text = <"*Absent(en)">
+					description = <"*Oedema is not observed to be present.(en)">
+				>
+				["at0023"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0024"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+				["at0025"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+				["at0026"] = <
+					text = <"*Pitting occurs(en)">
+					description = <"*Oedema is observed to display pitting on finger pressure.(en)">
+				>
+				["at0027"] = <
+					text = <"*No pitting occurs(en)">
+					description = <"*Oedema is not observed to display pitting on finger pressure.(en)">
+				>
+				["at0028"] = <
+					text = <"*Cluster(en)">
+					description = <"**(en)">
+				>
+			>
+		>
+	>

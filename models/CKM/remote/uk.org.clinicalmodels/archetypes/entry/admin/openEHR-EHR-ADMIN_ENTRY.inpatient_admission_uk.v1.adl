@@ -1,0 +1,117 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.inpatient_admission_uk.v1
+
+concept
+	[at0000]	-- Inpatient admission
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"HANDIHealth,UK">
+		["email"] = <"ian@handihealth.org">
+		["date"] = <"2015-02-13">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record administrative details of an inpatient admission, in accordance with AoMRC headings.">
+			use = <"">
+			keywords = <"admission", "inpatient">
+			misuse = <"">
+			copyright = <"© Clinical Models UK">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E2D08C97A3F356019522A214A324CAD0">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- Inpatient admission
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Date of admission
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Admission method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0004, 	-- Elective
+									at0005, 	-- Emergency
+									at0006, 	-- Transfer
+									at0007]	-- Maternity
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0008] occurrences matches {0..1} matches {	-- Referrer details
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Source of admission
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Inpatient admission">
+					description = <"Details of inpatient admission, in accordance with AoMRC headings.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Date of admission">
+					description = <"Date patient admitted to hospital.">
+				>
+				["at0003"] = <
+					text = <"Admission method">
+					description = <"How the patient was admitted to hospital.">
+				>
+				["at0004"] = <
+					text = <"Elective">
+					description = <"The admission was planned.">
+				>
+				["at0005"] = <
+					text = <"Emergency">
+					description = <"The admission was made as an emergency.">
+				>
+				["at0006"] = <
+					text = <"Transfer">
+					description = <"The patient was transferred from another inpatient unit.">
+				>
+				["at0007"] = <
+					text = <"Maternity">
+					description = <"The admission was maternity-related.">
+				>
+				["at0008"] = <
+					text = <"Referrer details">
+					description = <"Details of person making the request for admission.">
+				>
+				["at0009"] = <
+					text = <"Source of admission">
+					description = <"The locaton of the patient immediately prior to admission.">
+					comment = <" eg, usual place of residence, temporary place of residence, penal establishment.">
+				>
+			>
+		>
+	>
