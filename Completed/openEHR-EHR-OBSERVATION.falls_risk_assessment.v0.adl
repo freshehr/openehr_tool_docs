@@ -1,0 +1,257 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.falls_risk_assessment.v0
+
+concept
+	[at0000]	-- Falls risk assessment
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Hildegard Franke">
+		["email"] = <"hildi@freshehr.com">
+		["organisation"] = <"freshEHR Clinical Informatics Ltd.">
+		["date"] = <"2017-10-30">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For the capture and reporting of falls risk assessment details">
+			use = <"">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["MD5-CAM-1.0.1"] = <"10991E43E411B8CE80D2F4013AF96BEA">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Falls risk assessment
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {	-- Any Event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- ItemTree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Recent falls
+										value matches {
+											2|[local::at0006], 	-- None in last 12 months
+											4|[local::at0007], 	-- One or more between 3 and 12 months ago
+											6|[local::at0008], 	-- One of more in last 3 months
+											8|[local::at0009]  	-- One or more in last 3 months whilst inpatient or resident
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Medications
+										value matches {
+											1|[local::at0011], 	-- Not taking any of these
+											2|[local::at0012], 	-- Taking one
+											3|[local::at0013], 	-- Taking two
+											4|[local::at0014]  	-- Taking more than two
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- Psychological
+										value matches {
+											1|[local::at0016], 	-- Does not appear to have any
+											2|[local::at0017], 	-- Appears mildly affected by one or more
+											3|[local::at0018], 	-- Appears moderately affected by one or more
+											4|[local::at0019]  	-- Appears severely affected by one or more
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {	-- Cognitive status
+										value matches {
+											1|[local::at0021], 	-- Intact
+											2|[local::at0022], 	-- Mildly impaired
+											3|[local::at0023], 	-- Moderately impaired
+											4|[local::at0024]  	-- Severely impaired
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Total risk score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|5..20|}
+											}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Risk status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0027, 	-- Low
+													at0028, 	-- Medium
+													at0029]	-- High
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0004] matches {	-- ItemTree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0030] occurrences matches {0..*} matches {	-- Confounding factors
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0031] matches {	-- ItemTree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0032] occurrences matches {0..1} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"en", ...>
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Falls risk assessment">
+					description = <"Falls risk assessment tool.">
+				>
+				["at0001"] = <
+					text = <"History">
+				>
+				["at0002"] = <
+					text = <"Any Event">
+					description = <"A specific date and/or time which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"ItemTree">
+				>
+				["at0004"] = <
+					text = <"ItemTree">
+				>
+				["at0005"] = <
+					text = <"Recent falls">
+					description = <"Details of recent falls.">
+				>
+				["at0006"] = <
+					text = <"None in last 12 months">
+					description = <"Patient has had no falls in last 12 months">
+				>
+				["at0007"] = <
+					text = <"One or more between 3 and 12 months ago">
+					description = <"Patient has had one or more falls between 3 and 12 months ago">
+				>
+				["at0008"] = <
+					text = <"One of more in last 3 months">
+					description = <"Patient has had one or more falls in last 3 months">
+				>
+				["at0009"] = <
+					text = <"One or more in last 3 months whilst inpatient or resident">
+					description = <"Patient has had one or more falls in last 3 months whilst inpatient or resident">
+				>
+				["at0010"] = <
+					text = <"Medications">
+					description = <"Details of medications (Sedatives, anti-depressants, anti-Parkinson, diuretics,, anti-hypertensives, hypnotics).">
+				>
+				["at0011"] = <
+					text = <"Not taking any of these">
+					description = <"Patient is not taking any of the relevant medications">
+				>
+				["at0012"] = <
+					text = <"Taking one">
+					description = <"Patient is taking one of the relevant medications.">
+				>
+				["at0013"] = <
+					text = <"Taking two">
+					description = <"Patient is taking two of the relevant medications.">
+				>
+				["at0014"] = <
+					text = <"Taking more than two">
+					description = <"Patient is taking more than two of the relevant medications.">
+				>
+				["at0015"] = <
+					text = <"Psychological">
+					description = <"Details of psychological issues: anxiety, depression, decreased cooperation, decreased insight or decreased judgement especially re mobility.">
+				>
+				["at0016"] = <
+					text = <"Does not appear to have any">
+					description = <"Patient does not appear to have any psychological issues.">
+				>
+				["at0017"] = <
+					text = <"Appears mildly affected by one or more">
+					description = <"Patient appears mildly affected by one or more psychological issues.">
+				>
+				["at0018"] = <
+					text = <"Appears moderately affected by one or more">
+					description = <"Patient appears moderately affected by one or more psychological issues.">
+				>
+				["at0019"] = <
+					text = <"Appears severely affected by one or more">
+					description = <"Patient appears severely affected by one or more">
+				>
+				["at0020"] = <
+					text = <"Cognitive status">
+					description = <"Details of cognitive status.">
+				>
+				["at0021"] = <
+					text = <"Intact">
+					description = <"Patient's cognitive status is perceived to be intact.">
+				>
+				["at0022"] = <
+					text = <"Mildly impaired">
+					description = <"Patient's cognitive status is perceived to be mildly impaired.">
+				>
+				["at0023"] = <
+					text = <"Moderately impaired">
+					description = <"Patient's cognitive status is perceived to be moderately impaired.">
+				>
+				["at0024"] = <
+					text = <"Severely impaired">
+					description = <"Patient's cognitive status is perceived to be severely impaired.">
+				>
+				["at0025"] = <
+					text = <"Total risk score">
+					description = <"Total risk score calculated from the four assessment criteria.">
+				>
+				["at0026"] = <
+					text = <"Risk status">
+					description = <"Description of risk status.">
+				>
+				["at0027"] = <
+					text = <"Low">
+					description = <"Falls risk is low with a total score of 5 to 11.">
+				>
+				["at0028"] = <
+					text = <"Medium">
+					description = <"Falls risk is medium with a total score of 12 to 15.">
+				>
+				["at0029"] = <
+					text = <"High">
+					description = <"Falls risk is high with a total score of 16 to 20.">
+				>
+				["at0030"] = <
+					text = <"Confounding factors">
+					description = <"Record any issues or factors which might impact on the score or assessment.">
+				>
+				["at0031"] = <
+					text = <"ItemTree">
+				>
+				["at0032"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
+					comment = <"e.g. Local hospital departmental infomation or additional metadata to align with HL7 or CDISC equivalents.">
+				>
+			>
+		>
+	>
